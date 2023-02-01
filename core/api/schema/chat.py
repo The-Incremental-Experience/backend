@@ -10,3 +10,9 @@ class Prediction(Schema):
 
     text: str
     source: List[str]
+
+
+class Question(Schema):
+    """Cohere prompt"""
+
+    text: str

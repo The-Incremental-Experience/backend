@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.9"
 django = "^4.1.6"
 django-ninja = "^0.20.0"
+cohere = "^3.2.6"
 
 
 [tool.poetry.group.dev.dependencies]
