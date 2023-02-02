@@ -9,7 +9,7 @@ class Prediction(Schema):
     """Model prediction with the list of sources."""
 
     text: str
-    source: List[str]
+    sources: List[str]
 
 
 class Question(Schema):
