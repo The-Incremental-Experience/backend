@@ -29,5 +29,5 @@ async def answer(_: HttpRequest, question: Question):
 
     return Prediction(
         text=response[0].text,
-        source=["Book 1 Page 3"],
+        sources=["Book 1 Page 3"],
     )
