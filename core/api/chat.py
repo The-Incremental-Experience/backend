@@ -42,7 +42,8 @@ def generate_response(co, question_text) -> str:
         **kwargs,
     )
 
-    return response[0].text
+    response_text = ".".join(response[0].text.split(".")[:-1]) + "."
+    return response_text
 
 
 def find_sources(co, question_text) -> List[str]:
@@ -62,4 +63,5 @@ def find_sources(co, question_text) -> List[str]:
     similar_item_ids = source_index.get_nns_by_vector(question_embedding, 10)
 
     # return best 3 matches
-    return [ordered_question_to_source_map[similar_item_ids[i]]["source"] for i in range(len(similar_item_ids[:3]))]
+    sources = [ordered_question_to_source_map[similar_item_ids[i]]["source"] for i in range(len(similar_item_ids[:3]))]
+    return list(set(sources))
